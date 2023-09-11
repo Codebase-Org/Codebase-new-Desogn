@@ -1,0 +1,68 @@
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 60%;
+}
+
+.container .row {
+  display: flex;
+  align-content: center;
+  margin-top: 50px;
+}
+
+.container .row .col {
+  min-width: 50%;
+}
+
+.container .row .col:first-child {
+  padding-right: 10px;
+}
+
+.container .row .col .form-container {
+  width: 100%;
+}
+
+.container .row .col .form-container .form-header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-bottom: 10px;
+}
+
+.container .row .col .form-container .form-header h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.container .row .col .form-container .form-body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.container .row .col .form-container .form-body .form-group {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.container .row .col .form-container .form-body .form-group label {
+  min-width: 125px;
+}
+
+.container .row .col .form-container .form-body .form-group .form-control {
+  min-width: 100%;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #eff2f4;
+}
+
+.container .row .col .form-container .form-body .form-group input[type='file'].form-control {
+  width: 100%;
+  border: none;
+}
+
+.container .row .col .preview {
+  width: 100%;
+  height: auto;
+}

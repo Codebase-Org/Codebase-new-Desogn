@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="forum-header"><h2>{{category.catname}} Forum</h2></div>
+    <div class="forum-toolbar">
+        <button type="button" class="btn btn-create" id="btn-modal" (click)="toggleModal()"><i class="fa fa-plus"></i>Add Post</button>
+    </div>
+    <div class="posts-wrapper">
+        <div class="post-item" *ngFor="let item of posts">
+            <div class="col">
+                <span class="info"><label>Author:</label>{{item.username}}</span>
+                <span class="info"><label>Date:</label>{{item.post_time}}</span>
+                <span class="info"><label>Views:</label>{{item.post_views}}</span>
+                <span class="info"><label>Answers:</label>answers</span>
+                <span class="info"><label>Updated:</label>updated time</span>
+            </div>
+            <div class="col-big">
+                <span class="info-big">{{item.post_headline}}</span>
+                <span class="info-big">{{item.post_content}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-wrapper" id="modal" [ngClass]="{'show': showModal}">
+
+        <div class="modal" id="add-post">
+            <form [formGroup]="postForm">
+            <div class="modal-header"><h3>Add Forum Post</h3></div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Post Title</label>
+                    <input type="text" formControlName="post_headline" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Post Type</label>
+                    <select class="form-control" formControlName="post_type_id">
+                        <option *ngFor="let item of postTypes; let t = index" value="{{postTypes[t].post_type_id}}">{{postTypes[t].post_type_title}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Post Category</label>
+                    <select class="form-control" formControlName="category_id">
+                        <option *ngFor="let item of categories; let i = index" value="{{categories[i].category_id}}" [selected]="category.category_id === categories[i].category_id">{{categories[i].catname}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Post Content</label>
+                    <textarea class="form-control" formControlName="post_content"></textarea>
+                </div>
+                <div class="form-group"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-create" (click)="createPost(postForm.value)">Create Post</button>
+                <button type="reset" class="btn btn-reset">Clear Fields</button>
+                <button type="button" class="btn btn-cancel" (click)="toggleModal()">Close Modal</button>
+            </div>
+            </form>
+        </div>
+
+</div>

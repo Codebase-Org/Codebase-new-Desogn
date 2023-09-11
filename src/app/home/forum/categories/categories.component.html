@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="wrapper">
+        <button class="wrapper-item" data-id="{{item.category_id}}" #posts (click)="showForum(posts)" *ngFor="let item of categories">
+            <img src="./assets/pictures/404.webp" class="logo">
+            <span class="title">{{item.catname}}</span>
+            <span class="counter"><p>Total:</p><span class="badge">{{item.counter}}</span></span>
+        </button>
+    </div>
+</div>

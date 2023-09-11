@@ -1,0 +1,107 @@
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 60%;
+}
+
+.container .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 10px;
+}
+
+.container .row .col {
+  width: 260px;
+}
+
+.container .row .col-l {
+  flex: 1;
+}
+
+.container .row .col .toolbar {
+  border-bottom: 1px solid #eff2f4;
+  display: flex;
+}
+
+.container .row .col .toolbar .btn-group {
+  display: flex;
+}
+
+.container .row .col .toolbar .btn-group .btn {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  border-right: 1px solid #eff2f4;
+  padding: 5px 0;
+  width: 35px;
+  transition: ease-in-out .3s;
+}
+
+.container .row .col .toolbar .btn-group .btn:first-child {
+  border-left: 1px solid #eff2f4;
+}
+
+.container .row .col .toolbar .btn-group .btn:last-child {
+  border-right: none;
+}
+
+.container .row .col .toolbar .btn-group .btn:hover {
+  color: #1d98fe;
+}
+
+.container .row .col .toolbar .searchbox {
+  border: 1px solid #eff2f4;
+  flex: 1;
+  display: flex;
+}
+
+.container .row .col .toolbar .searchbox .form-control {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.container .row .col .toolbar .searchbox .btn {
+  width: 35px;
+  background: transparent;
+  border: none;
+  border-left: 1px solid #eff2f4;
+  transition: ease-in-out .3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.container .row .col .toolbar .searchbox .btn:hover {
+  color: #1d98fe;
+}
+
+.container .row .col .toolbar .btn .dropdown-menu {
+  position: absolute;
+  left: ;
+  top: 98px;
+  overflow: hidden;
+  border: 1px solid #eff2f4;
+  background: white;
+}
+
+.container .row .col .message-list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.container .row .col .message-list .list-item {
+  border-bottom: 1px solid #eff2f4;
+  cursor: pointer;
+  padding: 6px 0;
+  width: 100%;
+}
+
+.container .row .col .message-list .list-item:hover {
+  background: rgba(0,159,220,0.25);
+}
+
+.container .row .col .message-list .list-item:last-child {
+  border-bottom: none;
+}

@@ -1,0 +1,29 @@
+.container {
+  margin: 0 auto;
+  width: 60%;
+  padding: 20px 0;
+}
+
+.message {
+  margin: 10px auto;
+  width: 60%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #eff2f4;
+  position: relative;
+}
+
+.message .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-weight: bold;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.message.hide {
+  display: none;
+}

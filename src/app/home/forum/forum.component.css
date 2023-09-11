@@ -1,0 +1,207 @@
+.container {
+    margin: 0 auto;
+    padding: 0;
+    width: 60%;
+}
+
+.container .forum-header {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.container .forum-header h2 {
+    margin: 0;
+    padding: 0;
+    color: #112047;
+    text-transform: uppercase;
+}
+
+.container .forum-toolbar {
+    border-bottom: 1px solid #eff2f4;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.container .forum-toolbar .btn {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 6px 5px;
+    text-transform: uppercase;
+    color: #112047;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: ease-in-out .3s;
+}
+
+.container .forum-toolbar .btn i {
+    margin-right: 5px;
+}
+
+.container .forum-toolbar .btn:hover {
+    background: rgba(0,0,0,0.05);
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.85);
+}
+
+.posts-wrapper {
+    display: flex;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.posts-wrapper .post-item {
+    border: 1px solid #eff2f4;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    cursor: pointer;
+    border-radius: 0 10px 0 10px;
+}
+
+.posts-wrapper .post-item .col {
+    width: 280px;
+    border-right: 1px solid #eff2f4;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.posts-wrapper .post-item .col .info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.posts-wrapper .post-item .col-big {
+    display: block;
+    padding: 5px;
+    width: 100%;
+}
+
+.posts-wrapper .post-item .col-big .info-big {
+    width: 100%;
+    display: block;
+}
+
+.posts-wrapper .post-item .col-big .info-big:first-child {
+    border-bottom: 1px solid #eff2f4;
+    font-weight: bold;
+    text-align: center;
+    height: auto;
+}
+
+/* Modal styling goes here */
+.modal-wrapper {
+    display: none;
+}
+
+.modal-wrapper.show {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-wrapper .modal {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal-wrapper .modal .modal-header {
+    background-color: #eff2f4;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+}
+
+.modal-wrapper .modal .modal-header h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.modal-wrapper .modal .modal-body {
+    width: 100%;
+    padding: 0 8px;
+    background-color: #eff2f4;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal-wrapper .modal .modal-body .form-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.modal-wrapper .modal .modal-body .form-group label {
+    width: 150px;
+    padding: 10px 0;
+    border-right: 1px solid rgba(0,0,0,0.75);
+    display: block;
+    margin-right: 5px;
+}
+
+.modal-wrapper .modal .modal-body .form-group .form-control {
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.75);
+    flex: 1;
+    background: transparent;
+    outline: none;
+}
+
+.modal-wrapper .modal .modal-body .form-group textarea.form-control {
+    height: 300px;
+    resize: none;
+}
+
+.modal-wrapper .modal .modal-footer {
+    padding: 8px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #eff2f4;
+    width: 100%;
+}
+
+.modal-wrapper .modal .modal-footer .btn {
+    cursor: pointer;
+    border: none;
+    padding: 5px 15px;
+    margin-right: 20px;
+    background: transparent;
+    border-radius: 6px;
+}
+
+.modal-wrapper .modal .modal-footer .btn.btn-create {
+    background: #287a00;
+    color: #eff2f4;
+}
+
+.modal-wrapper .modal .modal-footer .btn.btn-reset {
+    background-color: #ff3232;
+    color: #eff2f4;
+}
+
+.modal-wrapper .modal .modal-footer .btn.btn-cancel {
+    background-color: darkorange;
+    color: #112047;
+}

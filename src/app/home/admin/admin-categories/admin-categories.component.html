@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <button class="btn btn-account" (click)="createCategory()"><i class="fa fa-user-plus"></i>Create Category</button>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Category Name</th>
+      <th>Logo</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of categories">
+      <td>{{item.catname}}</td>
+      <td>{{item.picture}}</td>
+      <td>
+        <div class="btn-group">
+          <button class="btn bg-dark" title="Edit Category" #edit data-id="{{item.category_id}}" (click)="editCategory(edit)"><i class="fa fa-pencil"></i></button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

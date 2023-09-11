@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <button class="btn btn-account" (click)="newAccount()"><i class="fa fa-user-plus"></i>Create Account</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>E-mail</th>
+        <th>Role</th>
+        <th>Profile</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of profiles">
+        <td>{{item.username}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.role}}</td>
+        <td>
+          <i class="fa fa-vcard-o" *ngIf="item.status === 'false'" title="No Profile" style="color: #ff3232"></i>
+          <i class="fa fa-vcard" *ngIf="item.status === 'true'" title="Profile" style="color:#287a00 "></i>
+        </td>
+        <td>
+          <div class="btn-group">
+            <button class="btn bg-gold" [disabled]="item.status === 'false'" #view title="See Profile" data-id="{{item.account_id}}" (click)="viewProfile(view)"><i class="fa fa-eye"></i></button>
+            <button class="btn bg-danger" title="Ban Account/Profile"><i class="fa fa-ban"></i></button>
+            <button class="btn bg-dark" title="Send a mail for Account"><i class="fa fa-envelope"></i></button>
+            <button class="btn bg-info" #delete title="Delete Account" data-id="{{item.account_id}}" (click)="deleteAccount(delete)"><i class="fa fa-trash"></i></button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+</div>

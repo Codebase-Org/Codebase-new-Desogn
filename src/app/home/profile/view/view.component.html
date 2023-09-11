@@ -1,0 +1,22 @@
+<div class="container">
+
+    <div class="card">
+        <div class="card-header"><i class="fa fa-address-card-o"></i><span>{{profile.firstname}} {{profile.secondname}} {{profile.lastname}}</span></div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col"><img src="./assets/pictures/404.webp" class="picture"></div>
+                <div class="col flex-column">
+                    <div class="group"><label>Full name </label>:<span>{{profile.firstname}} {{profile.secondname}} {{profile.lastname}}</span></div>
+                    <div class="group"><label>Work title </label>:<span>{{profile.worktitle}}</span></div>
+                    <div class="group"><label>Education </label>:<span></span></div>
+                    <div class="group"><label>Finish Date </label>:<span></span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col full">{{profile.information}}</div>
+            </div>
+        </div>
+        <div class="card-footer">Account created: {{profile.created_date}}</div>
+    </div>
+
+</div>

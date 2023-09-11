@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card">
+    <form [formGroup]="profile">
+    <div class="card-header"><i class="fa fa-user"></i>Create Profile</div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>Firstname</label>
+        <input type="text" formControlName="firstname" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Secondname</label>
+        <input type="text" formControlName="secondname" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Lastname</label>
+        <input type="text" formControlName="lastname" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Work title</label>
+        <input type="text" formControlName="worktitle" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Information</label>
+        <textarea formControlName="information" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-create" (click)="createHandler(profile.value)">Create Profile</button>
+      <button class="btn btn-cancel">Clear fields</button>
+    </div>
+    </form>
+  </div>
+</div>

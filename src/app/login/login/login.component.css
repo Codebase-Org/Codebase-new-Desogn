@@ -1,0 +1,131 @@
+.header {
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #eff2f4;
+}
+
+.header .container {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.header .container .brand {
+  padding: 20px 0;
+  font-size: 26px;
+  color: #112047;
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.15);
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 71px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .login-container {
+  border: 1px solid #eff2f4;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.15);
+
+}
+
+.wrapper .login-container .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapper .login-container .row .col {
+  width: 50%;
+  padding: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wrapper .login-container .row .col:first-child {
+  background: #1d98fe;
+  background-image: linear-gradient(90deg, #1d98fe, #a4d5fe);
+  border-radius: 10px 0 0 10px;
+  color: #ffffff;
+}
+
+.wrapper .login-container .row .col .headline-2 {
+  margin: 0;
+  padding: 25px 0;
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+}
+
+.wrapper .login-container .row .col .text {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.wrapper .login-container .row .col .center {
+  text-align: center;
+}
+
+.wrapper .login-container .row .col form {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper .login-container .row .col form .form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.wrapper .login-container .row .col form .form-group .form-control {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #112047;
+  outline: none;
+}
+
+.wrapper .login-container .row .col form .inline-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: darkgrey;
+}
+
+.wrapper .login-container .row .col form .inline-group .link {
+  color: darkgrey;
+  text-decoration: none;
+}
+
+.wrapper .login-container .row .col form .btn {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border-radius: 6px;
+  border: 1px solid #112047;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.wrapper .login-container .row .col form .btn.btn-login {
+  background-color: #1d98fe;
+  color: white;
+  border: none;
+}

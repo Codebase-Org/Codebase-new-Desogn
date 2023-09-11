@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="toolbar">
+        <div class="btn-group">
+          <button class="btn"><i class="fa fa-plus"></i></button>
+          <button class="btn" (click)="showDropdown()"><i class="fa fa-filter"></i>
+            <div class="dropdown-menu">
+              <p>This is a drop down menu</p>
+            </div></button>
+
+        </div>
+        <div class="searchbox">
+          <input type="text" class="form-control">
+          <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+      <div class="message-list">
+        <div class="list-item" *ngFor="let item of mails" #message data-id="{{item.message_id}}" (click)="readMail(message)">
+          <p>{{item.subject}}</p><span>{{item.send_date}}</span>
+        </div>
+      </div>
+      div.
+    </div>
+    <div class="col-l">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

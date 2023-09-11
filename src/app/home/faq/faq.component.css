@@ -1,0 +1,34 @@
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 60%;
+}
+
+.container h3 {
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.container .faq-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 25px;
+  flex-direction: row;
+}
+
+.container .faq-wrapper .faq {
+  width: 100%;
+  border: 1px solid #eff2f4;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+.container .faq-wrapper .faq .faq_title {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  font-weight: bold;
+}

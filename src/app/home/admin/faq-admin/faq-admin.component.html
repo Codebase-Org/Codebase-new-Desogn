@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <button class="btn btn-account" (click)="addFaq()"><i class="fa fa-plus"></i>Create FAQ</button>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Faq Title</th>
+      <th>Datetime</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of faqs">
+      <td>{{item.faq_title}}</td>
+      <td>{{item.faq_time}}</td>
+      <td>
+        <div class="btn group">
+          <button class="btn bg-dark" #delete data-id="{{item.faq_id}}" (click)="deleteFaq(delete)"><i class="fa fa-trash"></i></button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

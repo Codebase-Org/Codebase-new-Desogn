@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>FAQ's</h3>
+  <div class="faq-wrapper">
+    <details class="faq" *ngFor="let item of faqs">
+      <summary class="faq_title"><span>{{item.faq_title}}</span> <span>{{item.faq_time}}</span></summary>
+      <p class="faq_content">{{item.faq_content}}</p>
+    </details>
+  </div>
+</div>

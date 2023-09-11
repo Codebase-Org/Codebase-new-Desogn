@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+        <div class="card-body"><p class="card-text">Accounts</p><span class="badge">{{totalAccounts}}</span></div>
+    </div>
+    <div class="card">
+        <div class="card-body"><p class="card-text">Forum Posts</p><span class="badge">0</span></div>
+    </div>
+    <div class="card">
+        <div class="card-body"><p class="card-text">Articles</p><span class="badge">0</span></div>
+    </div>
+    <div class="card">
+        <div class="card-body"><p class="card-text">Other</p><span class="badge bg-red">0</span></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header"><i class="fa fa-clock-o"></i>Time spend online</div>
+        <div class="card-body">
+          <div class="online-timer">
+            <div class="box"><div class="flap"><span></span>{{onlinetime.weeks}}</div><p>Weeks</p></div>
+            <div class="box"><div class="flap"><span></span>{{onlinetime.days}}</div><p>Days</p></div>
+            <div class="box"><div class="flap"><span></span>{{onlinetime.hours}}</div><p>Hours</p></div>
+            <div class="box"><div class="flap"><span></span>{{onlinetime.minutes}}</div><p>Minutes</p></div>
+            <div class="box"><div class="flap"><span></span>{{onlinetime.seconds}}</div><p>Seconds</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card online-counter">
+        <div class="card-header"><i class="fa fa-clock-o"></i>Time spend online</div>
+        <div class="card-body">
+          <p class="card-text">Weeks</p><span class="badge">{{onlinetime.weeks}}</span>
+          <p class="card-text">Days</p><span class="badge">{{onlinetime.days}}</span>
+          <p class="card-text">Hours</p><span class="badge">{{onlinetime.hours}}</span>
+          <p class="card-text">Minutes</p><span class="badge">{{onlinetime.minutes}}</span>
+          <p class="card-text">Seconds</p><span class="badge">{{onlinetime.seconds}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <h1 class="brand">Code-Base</h1>
+      <div class="topmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><span class="nav-text">Welcome back </span></li>
+          <li class="nav-item"><span class="nav-text">{{fullname}}</span> </li>
+          <li class="nav-item"><button type="button" (click)="logoutHandler()" class="btn btn-phone"><i class="fa fa-sign-out"></i></button></li>
+          <li class="nav-item"><button type="button" class="btn btn-phone"><i class="fa fa-bars" (click)="toggleSidebar()"></i></button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<aside class="sidebar" [ngClass]="{'show': isToggler}">
+  <h1>{{role}} Menu</h1>
+  <nav class="sidebar-content">
+    <a routerLink="./frontpage" class="link"><i class="fa fa-home"></i><span>Home</span></a>
+    <p *ngFor="let type of types" class="link" #forum data-id="{{type.post_type_id}}" (click)="openForum(forum)">
+      <i [ngClass]="{
+      'fa-folder-open-o': type.post_type_id == 1,
+      'fa-file-text-o': type.post_type_id == 2,
+      'fa-sticky-note-o': type.post_type_id == 3
+      }" class="fa"></i><span>{{type.post_type_title}}</span>
+
+      <!--<i *ngIf="types[i].post_type_id === 1" class="fa fa-file-text-o"></i><span>{{types[i].post_type_title}}</span>
+      <i *ngIf="types[i].post_type_id === 3" class="fa fa-sticky-note-o"></i><span>{{types[i].post_type_title}}</span>-->
+    </p>
+    <!--<p class="link" #article data-id="2" (click)="openForum(article)"><i class="fa fa-file-text-o"></i><span>Article</span></p>-->
+    <a routerLink="./faqs" class="link"><i class="fa fa-question"></i><span>Faq</span></a>
+  </nav>
+  <nav class="sidebar-content" *ngIf="role === 'Owner' || role === 'Instructor' || role === 'Admin'">
+    <span class="subheader">Administration Menu</span>
+    <a routerLink="./dashboard" class="link"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+    <a routerLink="./accounts" class="link"><i class="fa fa-users"></i><span>Accounts</span></a>
+    <a routerLink="" class="link"><i class="fa fa-feed"></i><span>Message Of The Day</span></a>
+    <a routerLink="./faq_admin" class="link"><i class="fa fa-question"></i><span>Faq Manager</span></a>
+    <a routerLink="./admin_categories" class="link"><i class="fa fa-sitemap"></i><span>Category Manager</span></a>
+    <a routerLink="./messages" class="link"><i class="fa fa-inbox"></i><span>Messages</span></a>
+    <span class="subheader">Personal Menu</span>
+    <a routerLink="./profile" class="link" *ngIf="!isStatusActive"><i class="fa fa-address-card-o"></i><span>My Page</span></a>
+    <a routerLink="" class="link" *ngIf="!isStatusActive"><i class="fa fa-pencil"></i>Edit Profile</a>
+    <a routerLink="" class="link" *ngIf="!isStatusActive"><i class="fa fa-camera"></i>Upload Picture</a>
+    <a routerLink="./loginhistory" class="link"><i class="fa fa-bar-chart"></i><span>Login History</span></a>
+    <a routerLink="" class="link" (click)="logoutHandler()"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+  </nav>
+  <nav class="sidebar-content" *ngIf="role === 'Student'">
+    <span class="subheader">Personal Menu</span>
+    <a routerLink="./profile" class="link" *ngIf="!isStatusActive"><i class="fa fa-address-card-o"></i><span>My Page</span></a>
+    <a routerLink="./messages" class="link"><i class="fa fa-inbox"></i><span>Messages</span></a>
+    <a routerLink="" class="link" *ngIf="!isStatusActive"><i class="fa fa-pencil"></i>Edit Profile</a>
+    <a routerLink="" class="link" *ngIf="!isStatusActive"><i class="fa fa-camera"></i>Upload Picture</a>
+    <a routerLink="./loginhistory" class="link"><i class="fa fa-bar-chart"></i><span>Login History</span></a>
+    <a routerLink="" class="link" (click)="logoutHandler()"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+  </nav>
+  <nav class="sidebar-content" *ngIf="isStatusActive">
+    <a routerLink="./createprofile" class="link"><i class="fa fa-user-plus"></i><span>Create Profile</span></a>
+  </nav>
+</aside>

@@ -1,0 +1,118 @@
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 60%;
+}
+
+.container .row {
+  padding: 20px 0;
+  display: flex;
+  gap: 10px 20px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.container .row .btn {
+  background: transparent;
+  border: 1px solid #eff2f4;
+  padding: 10px 30px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container .row .btn i {
+  margin-right: 5px;
+}
+
+.container .row .btn.btn-account {
+  background-color: #1d98fe;
+  color: #eff2f4;
+}
+
+.container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.container table thead {
+  border-bottom: 1px solid #eff2f4;
+}
+
+.container table thead tr th {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 0;
+  text-align: left;
+  text-indent: 15px;
+}
+
+.container table thead tr th:nth-child(1) {
+  width: 100%;
+}
+
+.container table thead tr th:nth-child(2) {
+  min-width: 200px;
+}
+
+.container table thead tr th:nth-child(3), .container table thead tr th:nth-child(4), .container table thead tr th:nth-child(5) {
+  min-width: 100px;
+}
+
+.container table tbody tr {
+  border-bottom: 1px solid #eff2f4;
+}
+
+.container table tbody tr:nth-child(odd) {
+  background-color: rgba(255,255,255,1);
+}
+
+.container table tbody tr:nth-child(even) {
+  background-color: rgba(255,255,255,1);
+}
+
+.container table tbody tr td {
+  font-weight: normal;
+  padding: 10px 0;
+  text-align: left;
+  text-indent: 15px;
+}
+
+.container table tbody tr td .btn-group {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container table tbody tr td .btn-group .btn {
+  background: transparent;
+  border: 0px solid #eff2f4;
+  border-radius: 5px;
+  padding: 3px 5px;
+  border-right: 1px solid #eff2f4;
+  border-left: 0;
+  border-right: 0;
+  cursor: pointer;
+}
+
+.container table tbody tr td .btn-group .btn.bg-gold {
+  background: rgba(229,229,45,0.75);
+  color: rgba(0,0,0,1);
+}
+.container table tbody tr td .btn-group .btn.bg-danger {
+  background: rgba(183,45,45,0.75);
+  color: rgba(255,255,255,1);
+}
+.container table tbody tr td .btn-group .btn.bg-info {
+  background: rgba(45,192,229,0.75);
+  color: rgba(255,255,255,1);
+}
+.container table tbody tr td .btn-group .btn.bg-dark {
+  background: rgba(0,0,0,0.75);
+  color: #E5E52DBF;
+}

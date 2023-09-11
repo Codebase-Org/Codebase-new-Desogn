@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="form-container">
+        <form [formGroup]="updateForm" method="post" enctype="multipart/form-data">
+          <div class="form-header"><h3>{{category.catname}} Category</h3></div>
+          <div class="form-body">
+            <div class="form-group">
+              <label>Category Name</label>
+              <input type="text" name="catname" formControlName="catname" value="{{category.catname}}" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Category Logo</label>
+              <input type="file" name="picture" formControlName="picture" (change)="onSelectedFile($event)" class="form-control">
+            </div>
+          </div>
+          <div class="form-footer">
+            <input type="submit" class="btn btn-save" value="Update Category" (click)="updateCategory(updateForm.value)">
+            <button type="button" class="btn btn-cancel">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col">
+      <img [src]="previewUrl" alt="File Preview" class="preview">
+    </div>
+  </div>
+</div>
+
