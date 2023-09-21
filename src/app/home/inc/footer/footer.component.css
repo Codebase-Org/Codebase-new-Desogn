@@ -1,0 +1,51 @@
+.container {
+  width: 100%;
+  background: url("http://91.101.23.138/codebase/assets/img/footer-bg.png");
+  color: #eff2f4;
+}
+
+.container .footer {
+  margin: 0 auto;
+  width: 1170px;
+}
+
+.container .footer .row {
+  margin: 0 auto;
+  display: flex;
+  flex: 1 1 auto;
+  gap: 20px;
+
+}
+
+.container .footer .row .col {
+  flex: 1;
+  padding: 30px 0;
+}
+
+.container .footer .row .col .footer-headline {
+  margin: 0;
+  padding: 0;
+}
+
+.container .footer .row .col .footer-text {
+  color: #abb8c3;
+  word-break: break-all;
+}
+
+.container .footer .row .col .category-wrapper {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  width: 100%;
+  flex: 1 1 auto;
+  margin-top: 20px;
+}
+
+.container .footer .row .col .category-wrapper .category-item {
+  flex: 1 1 auto;
+}
+
+.container .footer .row .col .category-wrapper .category-item .category-logo {
+  width: 40px;
+  height: 40px;
+}

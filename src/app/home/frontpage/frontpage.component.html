@@ -1,7 +1,14 @@
-<div class="message" [ngClass]="{'hide': !isStatusActive}">
-  <i class="close" (click)="closeBox()">X</i>
-  {{status.message}}
-</div>
-<div class="container">
-  This is the main page you see when you are logged in.
+<div class="container bg-gradient">
+  <div class="search-wrapper">
+    <div>
+      <h1 class="search-headline">Have a Question?</h1>
+      <h4 class="search-subtext">If you have any question you can ask below or enter what you are looking for!</h4>
+        <div class="form-group-inline">
+          <form [formGroup]="searchForm">
+            <input type="text" formControlName="search" class="form-control" placeholder="Types your search terms here">
+            <input type="submit" value="Search" class="btn btn-search">
+          </form>
+        </div>
+    </div>
+  </div>
 </div>

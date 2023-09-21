@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpEventType, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Ilogin} from "../interfaces/ilogin";
 import {Observable} from "rxjs";
 import {Itoken} from "../interfaces/itoken";
-import {Imessage} from "../interfaces/imessage";
+import {Imassage} from "../interfaces/imassage";
 import {Iaccount} from "../interfaces/iaccount";
-import {Iloginhistory} from "../interfaces/iloginhistory";
-import {Irole} from "../interfaces/irole";
-import {Icategory} from "../interfaces/icategory";
-import {IpostTypes} from "../interfaces/ipost-types";
 import {Iposts} from "../interfaces/iposts";
-import {Ifaq} from "../interfaces/ifaq";
+import {Itypes} from "../interfaces/itypes";
+import {Icategory} from "../interfaces/icategory";
+import {Irole} from "../interfaces/irole";
+import {Ieducation} from "../interfaces/ieducation";
 
 @Injectable({
   providedIn: 'root'
@@ -19,127 +18,120 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = "http://192.168.22.31/codebase/api/";
+  //baseURL = "http://192.168.22.31:8080/codebase/api/";
+  baseURL = "http://91.101.23.138/codebase/api/";
+  //baseURLCapi = "";
 
-  headers = new HttpHeaders({
+  headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json; charset=UTF-8'
   });
 
-  createAccount(account: Iaccount): Observable<Imessage> {
-    const body = JSON.stringify(account);
-    return this.http.post<Imessage>(this.baseUrl + 'account/insert.php', body, {headers: this.headers});
+  /*
+  The Login and Logout api call will be shown here.
+   */
+  login(login:Ilogin): Observable<Itoken> {
+    return this.http.get<Itoken>(this.baseURL + 'login/login.php?email='+login.email+'&password='+login.password);
   }
 
-  createProfile(profile: Iaccount): Observable<Imessage> {
-    const body = JSON.stringify(profile);
-    return this.http.post<Imessage>(this.baseUrl + 'profile/insert.php', body, {headers: this.headers});
-  }
-
-  createPost(posts: Iposts): Observable<Imessage> {
-    const body = JSON.stringify(posts);
-    return this.http.post<Imessage>(this.baseUrl + 'forum/insert.php', body, {headers: this.headers})
-  }
-
-  createFaq(faq: Ifaq): Observable<Imessage> {
-    const body = JSON.stringify(faq);
-    return this.http.post<Imessage>(this.baseUrl + 'faq/insert.php', body, {headers: this.headers});
-  }
-
-  createCategory(data: any) {
-    return this.http.post(this.baseUrl + 'categories/create.php', data);
-  }
-
-  login(login: Ilogin): Observable<Itoken> {
-    return this.http.get<Itoken>(this.baseUrl + 'login/login.php?email=' + login.email + '&password=' + login.password);
-  }
-
-  logout(data:Ilogin): Observable<Imessage> {
+  logout(data:Ilogin): Observable<Imassage> {
     let body = JSON.stringify(data);
-    //console.log(body);
-    return this.http.put<Imessage>(this.baseUrl + 'login/logout.php', body, {headers: this.headers} );
+    return this.http.put<Imassage>(this.baseURL + 'login/logout.php', body, {headers: this.headers});
   }
 
-  getSingleAccount(data: Iaccount): Observable<Iaccount> {
-    return this.http.get<Iaccount>(this.baseUrl + 'account/single.php?id=' +data.account_id);
+  checkOwner(): Observable<any> {
+    return this.http.get(this.baseURL + 'account/check.php');
+  }
+
+  /*
+  All accounts and profile api call will be coming down below.
+   */
+  createAccount(account: Iaccount): Observable<Imassage> {
+    const body = JSON.stringify(account);
+    return this.http.post<Imassage>(this.baseURL + 'account/insert.php', body, {headers: this.headers});
   }
 
   getProfileData(data: Iaccount): Observable<Iaccount> {
     //console.log('ApiService: ', data);
-    return this.http.get<Iaccount>(this.baseUrl + 'profile/single.php?id=' +data.account_id);
+    return this.http.get<Iaccount>(this.baseURL + 'profile/single.php?id=' +data.account_id);
   }
 
-  checkOwner(): Observable<any> {
-    return this.http.get(this.baseUrl + 'account/check.php');
+  getTeam(data: Iaccount): Observable<Iaccount[]> {
+    return this.http.get<Iaccount[]>(this.baseURL + 'profile/teams.php?id='+data.instructor_id+'&role_id='+data.role_id);
   }
 
-  checkProfile(data: Iaccount): Observable<Imessage> {
-    return this.http.get<Imessage>(this.baseUrl + 'profile/check.php?id=' + data.account_id);
+  getAccounts(): Observable<Iaccount[]> {
+    return this.http.get<Iaccount[]>(this.baseURL + 'profile/profiles.php');
   }
 
-  getAllAccounts(): Observable<Iaccount[]> {
-    return this.http.get<Iaccount[]>(this.baseUrl + 'account/accounts');
+  studentCounter(data: Iaccount): Observable<any> {
+    return this.http.get(this.baseURL + 'account/studentCounter.php?role_id='+data.role_id);
   }
 
-  countAccounts(): Observable<any> {
-    return this.http.get(this.baseUrl + 'account/counter.php');
+  getSpecificRoleAccounts(data: any): Observable<Iaccount[]> {
+    return this.http.get<Iaccount[]>(this.baseURL + 'profile/selectAll.php?role_id='+data);
   }
 
-  getLoginHistory(data: Iloginhistory): Observable<Iloginhistory[]> {
-    //console.log(data);
-    return this.http.get<Iloginhistory[]>(this.baseUrl + 'login/history.php?id=' + data.account_id +'&page=' + data.page);
+  getRoles(): Observable<Irole[]> {
+    return this.http.get<Irole[]>(this.baseURL + 'roles/roles.php');
   }
 
-  getOnlineTime(data: Iloginhistory): Observable<Iloginhistory[]> {
-    return this.http.get<Iloginhistory[]>(this.baseUrl + 'login/onlineTime.php?id=' + data.account_id);
+  getSpecificRoles(data: any): Observable<Irole[]> {
+    return this.http.get<Irole[]>(this.baseURL + 'roles/selectAll.php?role_id='+data);
   }
 
-  getAllProfiles(): Observable<Iaccount[]> {
-    return this.http.get<Iaccount[]>(this.baseUrl + 'profile/profiles.php');
+  checkProfile(data: any): Observable<Imassage> {
+    return this.http.get<Imassage>(this.baseURL + 'profile/check.php?id=' + data);
   }
 
-  getAllRoles(): Observable<Irole[]> {
-    return this.http.get<Irole[]>(this.baseUrl + 'roles/roles.php');
+  getEducations(): Observable<Ieducation[]> {
+    return this.http.get<Ieducation[]>(this.baseURL + 'profile/educations.php');
   }
 
-  getCategories(post_type_id: any): Observable<Icategory[]> {
-    return this.http.get<Icategory[]>(this.baseUrl + 'categories/categories.php?type_id='+ post_type_id);
+  createProfile(data: any) {
+    return this.http.post(this.baseURL + 'profile/insert.php', data);
+  }
+
+  updateProfile(data: any) {
+    return this.http.post(this.baseURL + 'profile/update.php', data);
+  }
+
+  getSingleAccount(data: Iaccount): Observable<Iaccount> {
+    return this.http.get<Iaccount>(this.baseURL + 'account/single.php?id='+data.account_id);
+  }
+
+  updateAccount(data: Iaccount): Observable<any> {
+    let body = JSON.stringify(data);
+    return this.http.put(this.baseURL + 'account/update.php', body, {headers: this.headers});
+  }
+
+  /*
+  Posts and Articles goes here with all api calls
+   */
+  counter(data: Iposts): Observable<any> {
+    return this.http.get(this.baseURL + 'forum/counter.php?type_id='+data.post_type_id);
+  }
+
+  getPostTypes(): Observable<Itypes[]> {
+    return this.http.get<Itypes[]>(this.baseURL + 'forum/post_types.php');
   }
 
   getCategoryList(): Observable<Icategory[]> {
-    return this.http.get<Icategory[]>(this.baseUrl + 'categories/category_list.php');
+    return this.http.get<Icategory[]>(this.baseURL + 'categories/category_list.php');
+  }
+
+  getCategories(post_type_id: any): Observable<Icategory[]> {
+    return this.http.get<Icategory[]>(this.baseURL + 'categories/categories.php?type_id='+post_type_id);
+  }
+
+  getSingleType(id: Itypes):Observable<Itypes> {
+    return this.http.get<Itypes>(this.baseURL + 'types/single.php?type_id='+id.post_type_id);
   }
 
   getSingleCategory(id: Icategory): Observable<Icategory> {
-    return this.http.get<Icategory>(this.baseUrl + 'categories/single.php?id=' + id.category_id);
-  }
-
-  getPostTypes(): Observable<IpostTypes[]> {
-    return this.http.get<IpostTypes[]>(this.baseUrl + 'forum/post_types.php');
-  }
-
-  getSingleType(id: IpostTypes): Observable<IpostTypes> {
-    return this.http.get<IpostTypes>(this.baseUrl + 'types/single.php?type_id='+id.post_type_id);
+    return this.http.get<Icategory>(this.baseURL + 'categories/single.php?id=' + id.category_id);
   }
 
   getForumPosts(id: Iposts): Observable<Iposts[]> {
-    return this.http.get<Iposts[]>(this.baseUrl + 'forum/posts.php?id='+id.category_id);
+    return this.http.get<Iposts[]>(this.baseURL + 'forum/posts.php?id='+id.category_id);
   }
-
-  getAllFaqs(): Observable<Ifaq[]> {
-    return this.http.get<Ifaq[]>(this.baseUrl + 'faq/faqs.php');
-  }
-
-  updateCategory(data: any) {
-    return this.http.post(this.baseUrl + 'categories/update.php', data);
-  }
-
-  deleteAccount(id: Iaccount): Observable<Imessage[]> {
-    //console.log(id);
-    return this.http.delete<Imessage[]>(this.baseUrl + 'account/destroy.php?account_id=' + id.account_id);
-  }
-
-  deleteFaq(id: Ifaq): Observable<Imessage> {
-    return this.http.delete<Imessage>(this.baseUrl + 'faq/destroy.php?id='+id.faq_id);
-  }
-
 }

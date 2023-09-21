@@ -1,0 +1,70 @@
+<div class="dashboard" id="dashboard">
+  <div class="row">
+    <div class="card">
+      <div class="card-header"><span class="card-text">Students</span></div>
+      <div class="card-body"><span class="text-primary">{{studentCount.counter}}</span></div>
+      <div class="card-footer"></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-text">Online Now</span></div>
+      <div class="card-body"><span class="text-danger">15</span></div>
+      <div class="card-footer"></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-text">Articles</span></div>
+      <div class="card-body"><span class="text-warning">{{articleCount.counter}}</span></div>
+      <div class="card-footer"></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-text" >Forum Posts</span></div>
+      <div class="card-body"><span class="text-success">{{forumCount.counter}}</span></div>
+      <div class="card-footer"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card">
+      <div class="card-header"><span class="card-text">Newest Posts</span></div>
+      <div class="card-body"></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-text">Reportet Posts</span></div>
+      <div class="card-body"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-text">Your Team of Students</span>
+      </div>
+      <div class="card-body">
+        <table>
+          <thead>
+          <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>#</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of team">
+            <td>{{item.username}}</td>
+            <td>{{item.firstname}} {{item.secondname}} {{item.lastname}}</td>
+            <td>{{item.email}}</td>
+            <td><div class="onlineStatus" [ngClass]="{
+            'online': item.onlineStatus == 1,
+            'offline': item.onlineStatus == 0
+            }"></div></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-text">Your Student Projects</span>
+      </div>
+      <div class="card-body"></div>
+    </div>
+  </div>
+</div>

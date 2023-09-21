@@ -1,5 +1,4 @@
 export interface Itokenpayload {
-
   aud?: string | string[] | undefined;
   exp?: number | undefined;
   iat?: number | undefined;
@@ -10,5 +9,5 @@ export interface Itokenpayload {
 
   account_id?: number | undefined;
   role?: string | undefined;
-
+  role_id?: number | undefined;
 }

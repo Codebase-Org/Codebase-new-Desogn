@@ -5,8 +5,8 @@ export interface Iaccount {
   email?: string;
   firstname?: string;
   secondname?: string;
-  lastname?:string;
-  picture?:string;
+  lastname?: string;
+  picture?: string;
   role_id?: any;
   role?: any;
   information?: string;
@@ -16,4 +16,13 @@ export interface Iaccount {
   profile_id?: any;
   profile?: any;
   status?: string;
+  instructor_id?: any;
+  onlineStatus?: any;
+  pass1?: string;
+  pass2?: string;
+  education?: string;
+  internship?: string;
+  birthday?: string;
+  location?: string;
+  shortBirthday?: string;
 }

@@ -1,0 +1,61 @@
+<div class="container">
+  <form [formGroup]="profileForm" method="post">
+    <div class="row">
+      <div class="card">
+        <div class="card-header">Personal Information</div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>Firstname</label>
+            <input type="text" formControlName="firstname" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Secondname</label>
+            <input type="text" formControlName="secondname" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Lastname</label>
+            <input type="text" formControlName="lastname" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Picture</label>
+            <input type="file" class="form-control" formControlName="picture" (change)="onSelectedFile($event)">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Educational Information</div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>Education</label>
+            <select class="form-control" formControlName="education">
+              <option *ngFor="let item of education; let i = index;" value="{{education[i].education}}">{{education[i].education}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Worktitle</label>
+            <input type="text" class="form-control" formControlName="worktitle">
+          </div>
+          <div class="form-group">
+            <label>Internship</label>
+            <input type="text" class="form-control" formControlName="internship">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card">
+        <div class="card-header">About Information</div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" formControlName="information"></textarea>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary" (click)="createHandler(profileForm.value)">Create Profile</button>
+          <button type="reset" class="btn btn-cancel">Clear All</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

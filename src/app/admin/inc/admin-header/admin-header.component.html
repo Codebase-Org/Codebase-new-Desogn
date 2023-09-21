@@ -1,0 +1,62 @@
+<div class="container">
+  <aside class="sidebar show">
+    <div class="sidebar-header">
+<!--      <img src="{{urlPath}}logo/CB-Logo.png" class="header-logo" title="Codebase Logo" alt="Codebase Logo">-->
+      <h2>Codebase</h2>
+      <div class="header-options">
+        <ul class="options">
+          <li class="options-item"><i class="fa fa-bell-o"></i><span class="badge">3</span></li>
+          <li class="options-item" (click)="toggleUserInfoMenu()"><i class="fa fa-user-circle-o"></i><span class="online-status"></span>
+          <div class="user-info" [ngClass]="{'show': isUserInfoActive}">
+            <div class="info-header">
+              <span class="info-text">Signed in as</span>
+              <span class="info-text">{{email}}</span>
+            </div>
+            <div class="info-body">
+              <span class="button" *ngIf="isProfileExists" (click)="createProfile()"><i class="fa fa-user-plus"></i><span>Create Profile</span></span>
+              <span class="button" #profile data-id="{{accountId}}" (click)="showProfile(profile)"><i class="fa fa-user-circle-o"></i><span>Profile</span></span>
+              <span class="button"><i class="fa fa-gear"></i><span>Settings</span></span>
+              <span class="button"><i class="fa fa-power-off"></i><span>Status</span><i class="fa fa-caret-right" id="sub-menu"></i></span>
+              <span class="button"><i class="fa fa-list"></i><span>Login History</span></span>
+            </div>
+            <div class="info-footer">
+              <span class="button" (click)="logoutHandler()"><i class="fa fa-sign-out"></i><span>Sign out</span></span>
+            </div>
+          </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="{{urlPath}}pictures/uploads/{{picture}}" class="profile-picture">
+      <div class="profile-info">
+        <span class="info-name">{{fullname}}</span>
+        <span class="info-email">{{email}}</span>
+      </div>
+    </div>
+    <div class="navbar">
+      <ul class="navbar-nav">
+        <li class="nav-text">General</li>
+        <li class="nav-item"><a routerLink="./dashboard" class="nav-link"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+        <li class="nav-item"><a routerLink="" class="nav-link"><i class="fa fa-inbox"></i><span>Messages</span></a></li>
+        <li class="nav-text">Accounts</li>
+        <li class="nav-item"><a routerLink="./accounts/All" class="nav-link"><i class="fa fa-users"></i><span>All Accounts</span></a></li>
+        <li class="nav-item"><a routerLink="" class="nav-link"><i class="fa fa-user-plus"></i><span>Create Accounts</span></a></li>
+        <li class="nav-text">FAQ's</li>
+        <li class="nav-item"><a routerLink="" class="nav-link"><i class="fa fa-question"></i><span>All Faq's</span></a></li>
+        <li class="nav-item"><a routerLink="" class="nav-link"><i class="fa fa-plus"></i><span>Create Faq</span></a></li>
+        <li class="nav-text">Categories</li>
+        <li class="nav-item"><a routerLink="" class="nav-link"><i class="fa fa-sitemap"></i><span>All Categories</span></a></li>
+        <li class="nav-item"><a routerLink="" class="nav-link"><i class="fa fa-plus"></i><span>Create Category</span></a></li>
+      </ul>
+    </div>
+  </aside>
+  <header class="topbar">
+    <ul class="topbar-nav">
+      <li class="nav-item"><i class="fa fa-arrows-alt" aria-hidden="true" title="Fullscreen F11"></i></li>
+      <li class="nav-item"><i class="fa fa-search" aria-hidden="true"></i></li>
+      <li class="nav-item"><i class="fa fa-inbox" aria-hidden="true"></i><span class="badge">0</span></li>
+    </ul>
+  </header>
+</div>
+

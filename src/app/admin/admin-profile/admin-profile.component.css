@@ -1,0 +1,146 @@
+.container {
+  top: 62px;
+  left: 280px;
+  position: absolute;
+  padding: 0;
+  width: calc(100vw - 280px);
+  height: calc(100vh - 62px);
+  background-color: rgba(199,199,199);
+}
+
+.container .profile-header {
+  width: 100%;
+  height: fit-content;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.container .profile-header .profile-banner {
+  height: 200px;
+  background: url("http://91.101.23.138/codebase/assets/img/wallpaper.jpg");
+}
+
+.container .profile-header .profile-navbar {
+  width: 100%;
+  background: rgba(255,255,255,1);
+  height: fit-content;
+  padding: 15px 0;
+}
+
+.container .profile-header .profile-navbar .wrapper {
+  margin: 0 auto;
+  width: 70%;
+  position: relative;
+}
+
+.container .profile-header .profile-navbar .wrapper .profile-picture {
+  width: 80px;
+  height: 80px;
+  border: 3px solid rgba(255,255,255,1);
+  border-radius: 50%;
+  position: absolute;
+  background: rgba(255,255,255,1);
+  top: -50px;
+}
+
+.container .profile-header .profile-navbar .wrapper .profil-info {
+  width: fit-content;
+  padding: 0 25px 0 0;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #abb8c3;
+}
+
+.container .profile-header .profile-navbar .wrapper .profil-info span {
+  font-weight: bold;
+}
+
+.container .profile-header .profile-navbar .wrapper .profil-info .subtext {
+  color: #abb8c3;
+  font-weight: normal;
+}
+
+.container .profile-header .profile-navbar .wrapper .profile-nav {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.container .profile-header .profile-navbar .wrapper .profile-nav .navbar-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container .profile-header .profile-navbar .wrapper .profile-nav .navbar-nav .nav-item {
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: ease-in-out .3s;
+}
+
+.container .profile-header .profile-navbar .wrapper .profile-nav .navbar-nav .nav-item.hide {
+  display: none;
+}
+
+.container .profile-header .profile-navbar .wrapper .profile-nav .navbar-nav .nav-item:hover {
+  color: #1d98fe;
+}
+
+.container .body-wrapper {
+  margin: 0 auto;
+  width: 70%;
+  padding: 25px 0;
+}
+
+.container .body-wrapper .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  gap: 25px;
+}
+
+.container .body-wrapper .row .col:first-child {
+  max-width: 280px;
+}
+
+.container .body-wrapper .row .col {
+  flex: 1;
+}
+
+.container .body-wrapper .row .col .card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+}
+
+.container .body-wrapper .row .col .card .card-body {
+  padding: 20px;
+}
+
+.container .body-wrapper .row .col .card .card-body h3 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.container .body-wrapper .row .col .card .card-body p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.container .body-wrapper .row .col .card .card-body .seperator {
+  background: #abb8c3;
+  color: #abb8c3;
+}
+
+.container .body-wrapper .row .col .card .card-body .card-group {
+  width: 100%;
+  padding: 8px 0;
+}
+
+.container .body-wrapper .row .col .card .card-body .card-group i {
+  margin-right: 15px;
+}

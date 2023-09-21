@@ -1,9 +1,9 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
 import {Router} from "@angular/router";
-import {JwtHelperService} from "@auth0/angular-jwt";
-import {Ilogin} from "../interfaces/ilogin";
-import {Itokenpayload} from "../interfaces/itokenpayload";
 import {ApiService} from "./api.service";
+import {JwtHelperService} from "@auth0/angular-jwt";
+import {Itokenpayload} from "../interfaces/itokenpayload";
+import {Ilogin} from "../interfaces/ilogin";
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,6 @@ export class AuthService {
 
   constructor(private router: Router, private jwt: JwtHelperService, private api: ApiService) {
     let token = localStorage.getItem("token");
-
     if(token) {
       this.token = token;
       this.OnLoginSuccessful.emit();
@@ -43,7 +42,8 @@ export class AuthService {
 
   logout(): void {
     let data: Ilogin = {
-      loginID: localStorage.getItem("loginSessionId")
+      loginID: localStorage.getItem("loginSessionId"),
+      account_id: this.id
     }
     //console.log(data);
     this.token = "";
@@ -81,4 +81,8 @@ export class AuthService {
     return this.package && this.package.role ? this.package.role : null;
   }
 
+  get role_id(): number | null {
+    //console.log(this.package);
+    return this.package && this.package.role_id ? this.package.role_id : null;
+  }
 }

@@ -1,0 +1,113 @@
+.dashboard {
+  top: 62px;
+  left: 280px;
+  position: absolute;
+  padding: 20px;
+  width: calc(100vw - 280px);
+  background-color: rgba(199,199,199);
+  overflow-y: auto;
+  min-height: calc(100vh - 62px);
+  height: fit-content;
+  max-height: fit-content;
+}
+
+.dashboard .row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.dashboard .row .card {
+  background-color: rgba(255,255,255);
+  border-radius: 10px;
+  flex: 1;
+  height: fit-content;
+  padding: 0px 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dashboard .row .card .card-header {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.dashboard .row .card .card-header .card-text {
+  color: #112047;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
+
+.dashboard .row .card .card-body {
+  padding: 0 0 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard .row .card .card-body .row {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0 0 0;
+  margin-bottom: 0;
+}
+
+.dashboard .row .card .card-body .row .col {
+  flex: 1 1;
+}
+
+.dashboard .row .card .card-body span {
+  font-size: 30px;
+}
+
+.dashboard .row .card .card-body span.text-primary {
+  color: #1d98fe;
+}
+
+.dashboard .row .card .card-body span.text-danger {
+  color: red;
+}
+
+.dashboard .row .card .card-body span.text-warning {
+  color: darkorange;
+}
+
+.dashboard .row .card .card-body span.text-success {
+  color: green;
+}
+
+.dashboard .row .card .card-body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard .row .card .card-body table thead tr {
+  border-bottom: 1px solid #112047;
+}
+
+.dashboard .row .card .card-body table thead tr th {
+  text-align: left;
+  font-weight: bold;
+}
+
+.dashboard .row .card .card-body table tbody tr td {
+  padding: 5px 0;
+}
+
+.dashboard .row .card .card-body table tbody tr td .onlineStatus {
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  border: 1px solid #112047;
+}
+
+.dashboard .row .card .card-body table tbody tr td .onlineStatus.online {
+  background-color: green;
+}
+
+.dashboard .row .card .card-body table tbody tr td .onlineStatus.offline {
+  background-color: red;
+}

@@ -1,0 +1,215 @@
+.container {
+  top: 62px;
+  left: 280px;
+  position: absolute;
+  padding: 15px;
+  width: calc(100vw - 280px);
+  height: calc(100vh - 62px);
+  background-color: rgba(199,199,199);
+}
+
+.container .tools {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container .tools .btn {
+  padding: 4px 10px;
+  width: 50px;
+  background: rgba(255,255,255,1);
+  border: 1px solid #eff2f4;
+  position: relative;
+  cursor: pointer;
+}
+
+.container .tools .btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.container .tools .btn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.container .tools .btn .dropdown {
+  display: none;
+}
+
+.container .tools .btn .dropdown.show {
+  display: block;
+  top: 25px;
+  height: fit-content;
+  left: 0;
+  width: fit-content;
+  background: white;
+  border: 1px solid #eff2f4;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+  position: absolute;
+}
+
+.container .tools .btn .dropdown .dropdown-item {
+  display: block;
+  width: fit-content;
+  padding: 10px 20px;
+}
+
+.container .tools .filter {
+  margin-left: 10px;
+}
+
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.container table thead tr th:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50px;
+  min-width: 50px;
+}
+
+.container table thead tr th:last-child {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.container table thead tr {
+  border-bottom: 1px solid #eff2f4;
+  text-align: left;
+  padding: 5px 0;
+  width: auto;
+}
+
+.container table thead tr th {
+  text-align: left;
+  padding: 5px 0;
+  width: auto;
+}
+
+.container table thead tr th:nth-child(5), .container table thead tr th:nth-child(6) {
+  text-align: center;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.container table tbody tr:nth-child(odd) {
+  background-color: #abb8c3;
+}
+
+.container table tbody tr:nth-child(even) {
+  background-color: #eff2f4;
+}
+
+.container table tbody tr td {
+  padding: 5px 0;
+  width: fit-content;
+  min-height: 35px;
+}
+
+.container table tbody tr td:first-child {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  max-width: 50px;
+  min-width: 50px;
+}
+
+.container table tbody tr td .onlinestatus {
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  background: transparent;
+  display: block;
+}
+
+.container table tbody tr td .onlinestatus.online {
+  background-color: green;
+}
+
+.container table tbody tr td .onlinestatus.offline {
+  background-color: red;
+}
+
+.container table tbody tr td:last-child {
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.container table tbody tr td:nth-child(2) {
+  max-width: 200px;
+  min-width: 200px;
+}
+
+.container table tbody tr td:nth-child(3) {
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.container table tbody tr td:nth-child(4), .container table tbody tr td:nth-child(5) {
+  min-width: 100px;
+}
+
+.container table tbody tr td:nth-child(5) {
+  text-align: center;
+}
+
+.container table tbody tr td .status {
+  width: fit-content;
+}
+
+.container table tbody tr td .status.available {
+  color: #1d98fe;
+}
+
+.container table tbody tr td .status.unavailable {
+  color: #112047;
+}
+
+.container table tbody tr td .btn-group-inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container table tbody tr td .btn-group-inline .btn {
+  background: transparent;
+  border: 1px solid #112047;
+  width: 30px;
+  border-right: 0;
+  cursor: pointer;
+}
+
+.container table tbody tr td .btn-group-inline .btn:first-child {
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
+}
+
+.container table tbody tr td .btn-group-inline .btn:last-child {
+  border-radius: 0 4px 4px 0;
+  border-left: 1px solid #112047;
+  border-right: 1px solid #112047;
+}
+
+.container table tbody tr td .btn-group-inline .btn.btn-warning {
+  background: darkorange;
+  color: #112047;
+}
+
+.container table tbody tr td .btn-group-inline .btn.btn-info {
+  background: #1d98fe;
+  color: white;
+}
+
+.container table tbody tr td .btn-group-inline .btn.btn-secondary {
+  background: #abb8c3;
+  color: #112047;
+}
+
+.container table tbody tr td .btn-group-inline .btn.btn-danger {
+  background: red;
+  color: white;
+}

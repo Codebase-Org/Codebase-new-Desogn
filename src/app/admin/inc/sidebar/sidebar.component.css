@@ -1,0 +1,16 @@
+.sidebar {
+  display: none;
+}
+.sidebar.show {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  background-color: rgba(15,23,42,1);
+}

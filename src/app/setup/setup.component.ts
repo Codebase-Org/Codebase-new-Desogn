@@ -3,14 +3,13 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {Iaccount} from "../interfaces/iaccount";
 import {ApiService} from "../services/api.service";
 import {Router} from "@angular/router";
-import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-setup',
   templateUrl: './setup.component.html',
   styleUrls: ['./setup.component.css']
 })
-export class SetupComponent implements OnInit{
+export class SetupComponent implements OnInit {
 
   setup = new FormGroup({
     username: new FormControl(),

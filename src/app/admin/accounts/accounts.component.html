@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="tools">
+    <button type="button" class="btn" (click)="newAccount()" title="New Account"><i class="fa fa-user-plus"></i></button>
+    <button type="button" class="btn" (click)="showDropdown()" title="Filter"><i class="fa fa-filter"></i>
+      <div class="dropdown" [ngClass]="{'show': isDropdownActive}">
+        <span #role class="dropdown-item" data-id="{{default.role_name}}" (click)="filterAccounts(role)">All</span>
+        <span *ngFor="let item of roles" #role class="dropdown-item" data-id="{{item.role_name}}" (click)="filterAccounts(role)">{{item.role_name}}</span>
+      </div>
+    </button>
+    <span class="filter">Filter: {{filter}}</span>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Profile</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let items of accountsFiltered">
+        <td><span class="onlinestatus" [ngClass]="{
+        'online': items.onlineStatus == 1,
+        'offline': items.onlineStatus == 0
+        }"></span></td>
+        <td>{{items.username}}</td>
+        <td>{{items.email}}</td>
+        <td>{{items.role}}</td>
+        <td><i class="fa fa-address-card-o status" [ngClass]="{
+        'available': items.status == 'true',
+        'unavailable': items.status == 'false'}" [attr.title]="items.status === 'false' ? 'No Profile' : 'Profile'"></i></td>
+        <td>
+          <div class="btn-group-inline">
+            <button type="button" data-id="{{items.account_id}}" #view class="btn btn-warning" title="View Account" (click)="viewAccount(view)"><i class="fa fa-eye"></i></button>
+            <button type="button" data-id="{{items.account_id}}" #edit class="btn btn-info" title="Edit Account" (click)="editAccount(edit)"><i class="fa fa-pencil"></i></button>
+            <button type="button" data-id="{{items.account_id}}" class="btn btn-secondary" title="Ban Account"><i class="fa fa-ban"></i></button>
+            <button type="button" data-id="{{items.account_id}}" class="btn btn-danger" title="Delete Account"><i class="fa fa-trash"></i></button>
+          </div>
+        </td>
+    </tr>
+    </tbody>
+  </table>
+
+    <span> </span>
+
+</div>
+
