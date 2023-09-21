@@ -1,76 +1,141 @@
 .container {
-  margin: 0 auto;
-  padding: 15px 0 0 0;
-  width: 60%;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.container .card {
-  border: 1px solid #eff2f4;
-  box-shadow: 3px 3px 3px rgba(0,0,0,0.15);
-  flex: 1;
-  border-radius: 6px;
+.container .profile-header {
+    width: 100%;
+    height: fit-content;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
-.container .card .card-header {
-  border-bottom: 1px solid #eff2f4;
-  box-shadow: 0px 2px 2px rgba(0,0,0,0.25);
-  padding: 6px 6px;
-  font-weight: bold;
-  text-transform: uppercase;
+.container .profile-header .profile-banner {
+    height: 200px;
+    background: url("http://91.101.23.138/codebase/assets/img/wallpaper.jpg");
 }
 
-.container .card .card-header i {
-  margin-right: 10px;
+.container .profile-header .profile-navbar {
+    width: 100%;
+    background: rgba(255,255,255,1);
+    height: fit-content;
+    padding: 15px 0;
 }
 
-.container .card .card-body {
-  padding: 10px 20px;
-  min-height: 80px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+.container .profile-header .profile-navbar .wrapper {
+    margin: 0 auto;
+    width: 70%;
+    position: relative;
 }
 
-.container .card .card-body .row {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+.container .profile-header .profile-navbar .wrapper .profile-picture {
+    width: 80px;
+    height: 80px;
+    border: 3px solid rgba(255,255,255,1);
+    border-radius: 50%;
+    position: absolute;
+    background: rgba(255,255,255,1);
+    top: -50px;
 }
 
-.container .card .card-body .row .col {
-  flex: 1;
+.container .profile-header .profile-navbar .wrapper .profil-info {
+    width: fit-content;
+    padding: 0 25px 0 0;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #abb8c3;
 }
 
-.container .card .card-body .row .col.flex-column {
-  display: flex;
-  flex-direction: column;
+.container .profile-header .profile-navbar .wrapper .profil-info span {
+    font-weight: bold;
 }
 
-.container .card .card-body .row .col .picture {
-  width: 200px;
-  height: auto;
+.container .profile-header .profile-navbar .wrapper .profil-info .subtext {
+    color: #abb8c3;
+    font-weight: normal;
 }
 
-.container .card .card-body .row .col.flex-column .group {
-  display: flex;
-  justify-content: flex-start;
+.container .profile-header .profile-navbar .wrapper .profile-nav {
+    position: absolute;
+    right: 0;
+    top: 5px;
 }
 
-.container .card .card-body .row .col.flex-column .group label {
-  width: 80px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
+.container .profile-header .profile-navbar .wrapper .profile-nav .navbar-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.container .card .card-body .row .col.flex-column .group span {
-  margin-left: 15px;
-  text-transform: capitalize;
-  font-style: italic;
+.container .profile-header .profile-navbar .wrapper .profile-nav .navbar-nav .nav-item {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
 }
 
-.container .card .card-footer {
-  border-top: 1px solid #eff2f4;
-  padding: 6px 6px;
+.container .profile-header .profile-navbar .wrapper .profile-nav .navbar-nav .nav-item.hide {
+    display: none;
+}
+
+.container .profile-header .profile-navbar .wrapper .profile-nav .navbar-nav .nav-item:hover {
+    color: #1d98fe;
+}
+
+.container .body-wrapper {
+    margin: 0 auto;
+    width: 70%;
+    padding: 25px 0;
+}
+
+.container .body-wrapper .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    gap: 25px;
+}
+
+.container .body-wrapper .row .col:first-child {
+    max-width: 280px;
+}
+
+.container .body-wrapper .row .col {
+    flex: 1;
+}
+
+.container .body-wrapper .row .col .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+}
+
+.container .body-wrapper .row .col .card .card-body {
+    padding: 20px;
+}
+
+.container .body-wrapper .row .col .card .card-body h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.container .body-wrapper .row .col .card .card-body p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.container .body-wrapper .row .col .card .card-body .seperator {
+    background: #abb8c3;
+    color: #abb8c3;
+}
+
+.container .body-wrapper .row .col .card .card-body .card-group {
+    width: 100%;
+    padding: 8px 0;
+}
+
+.container .body-wrapper .row .col .card .card-body .card-group i {
+    margin-right: 15px;
 }

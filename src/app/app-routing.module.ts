@@ -14,6 +14,9 @@ import {CreateAdminProfileComponent} from "./admin/admin-profile/create-admin-pr
 import {EditAdminProfileComponent} from "./admin/admin-profile/edit-admin-profile/edit-admin-profile.component";
 import {AdminProfileComponent} from "./admin/admin-profile/admin-profile.component";
 import {EditAccountComponent} from "./admin/accounts/edit-account/edit-account.component";
+import {CreateProfileComponent} from "./home/profile/create-profile/create-profile.component";
+import {EditProfileComponent} from "./home/profile/edit-profile/edit-profile.component";
+import {ProfileComponent} from "./home/profile/profile.component";
 
 /*
   All routes for codebase, will be going here. But two of the routes are parents
@@ -31,7 +34,10 @@ const routes: Routes = [
      */
       {path: 'frontpage', component: FrontpageComponent},
       {path: 'category/:type_id', component: CategoryComponent},
-      {path: 'forum/:id', component: ForumComponent}
+      {path: 'forum/:id', component: ForumComponent},
+      {path: 'create-profile/:account_id', component: CreateProfileComponent},
+      {path: 'edit-profile/:account_id', component: EditProfileComponent},
+      {path: 'view-profile/:account_id', component: ProfileComponent}
     ]},
   {path: 'admin', pathMatch: 'full', redirectTo: 'admin/dashboard'},
   {path: 'admin', component: AdminComponent, children: [

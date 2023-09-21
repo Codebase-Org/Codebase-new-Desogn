@@ -69,3 +69,27 @@
   background: #112047;
   color: white;
 }
+
+.container .wrapper {
+  margin: 0 auto;
+  width: 1170px;
+}
+
+.container .wrapper .row {
+  display: flex;
+  flex: 3 1 auto;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.container .wrapper .row .col-large {
+  flex: 3;
+  padding: 25px 0;
+}
+
+.container .wrapper .row .col-small {
+  flex: 1;
+  padding: 25px 0;
+}
+

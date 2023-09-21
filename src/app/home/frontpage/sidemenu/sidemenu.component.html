@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-body">
+        <div class="profil">
+            <img src="{{picturePath}}/pictures/uploads/{{profile.picture}}" class="profil-picture">
+            <div class="profil-info">
+                <span>{{profile.firstname}} {{profile.secondname}} {{profile.lastname}}</span>
+                <span>{{profile.location}}</span>
+            </div>
+        </div>
+        <div class="nav">
+            <span class="nav-item" *ngIf="isProfileExists" data-id="{{profil.account_id}}" #profile (click)="createProfile(profile)"><i class="fa fa-user-plus"></i>Create Profile</span>
+            <span class="nav-item" *ngIf="!isProfileExists" data-id="{{profil.account_id}}" #view (click)="viewProfile(view)"><i class="fa fa-user-circle-o"></i>View Profile</span>
+            <span class="nav-item" *ngIf="!isProfileExists" data-id="{{profil.account_id}}" #edit (click)="editProfile(edit)"><i class="fa fa-address-card-o"></i>Edit Profile</span>
+        </div>
+    </div>
+</div>

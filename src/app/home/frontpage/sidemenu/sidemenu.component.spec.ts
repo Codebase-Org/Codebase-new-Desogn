@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileComponent } from './profile.component';
+import { SidemenuComponent } from './sidemenu.component';
 
-describe('ProfileComponent', () => {
-  let component: ProfileComponent;
-  let fixture: ComponentFixture<ProfileComponent>;
+describe('SidemenuComponent', () => {
+  let component: SidemenuComponent;
+  let fixture: ComponentFixture<SidemenuComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProfileComponent]
+      declarations: [SidemenuComponent]
     });
-    fixture = TestBed.createComponent(ProfileComponent);
+    fixture = TestBed.createComponent(SidemenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

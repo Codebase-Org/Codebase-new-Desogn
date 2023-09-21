@@ -24,6 +24,10 @@ import { AdminProfileComponent } from './admin/admin-profile/admin-profile.compo
 import { EditAdminProfileComponent } from './admin/admin-profile/edit-admin-profile/edit-admin-profile.component';
 import { CreateAdminProfileComponent } from './admin/admin-profile/create-admin-profile/create-admin-profile.component';
 import { EditAccountComponent } from "./admin/accounts/edit-account/edit-account.component";
+import { ProfileComponent } from './home/profile/profile.component';
+import { CreateProfileComponent } from './home/profile/create-profile/create-profile.component';
+import { SidemenuComponent } from './home/frontpage/sidemenu/sidemenu.component';
+import { EditProfileComponent } from './home/profile/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,11 @@ import { EditAccountComponent } from "./admin/accounts/edit-account/edit-account
     AdminProfileComponent,
     EditAdminProfileComponent,
     CreateAdminProfileComponent,
-    EditAccountComponent
+    EditAccountComponent,
+    ProfileComponent,
+    CreateProfileComponent,
+    SidemenuComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
