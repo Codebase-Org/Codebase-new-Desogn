@@ -101,4 +101,23 @@ export class AccountsComponent implements OnInit {
     this.router.navigate(['admin/edit-account', profil.account_id], {state: {data: profil}});
   }
 
+  deleteAccount(event: any) {
+    let profil: Iaccount = {
+      account_id: event.getAttribute('id')
+    }
+
+    let accountIndex = -1;
+
+    for (let i = 0; i < this.accounts.length; i++) {
+      if(this.accounts[i].account_id === profil.account_id) {
+        accountIndex = i;
+      }
+    }
+
+    this.api.deleteAccount(profil).subscribe(data => {
+      this.accounts.splice(accountIndex, 1);
+      console.log(data);
+    });
+  }
+
 }

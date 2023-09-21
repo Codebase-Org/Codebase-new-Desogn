@@ -37,8 +37,8 @@
           <div class="btn-group-inline">
             <button type="button" data-id="{{items.account_id}}" #view class="btn btn-warning" title="View Account" (click)="viewAccount(view)"><i class="fa fa-eye"></i></button>
             <button type="button" data-id="{{items.account_id}}" #edit class="btn btn-info" title="Edit Account" (click)="editAccount(edit)"><i class="fa fa-pencil"></i></button>
-            <button type="button" data-id="{{items.account_id}}" class="btn btn-secondary" title="Ban Account"><i class="fa fa-ban"></i></button>
-            <button type="button" data-id="{{items.account_id}}" class="btn btn-danger" title="Delete Account"><i class="fa fa-trash"></i></button>
+            <button type="button" data-id="{{items.account_id}}" class="btn btn-secondary" title="Ban Account" disabled><i class="fa fa-ban"></i></button>
+            <button type="button" data-id="{{items.account_id}}" #delete class="btn btn-danger" title="Delete Account" (click)="deleteAccount(delete)"><i class="fa fa-trash"></i></button>
           </div>
         </td>
     </tr>

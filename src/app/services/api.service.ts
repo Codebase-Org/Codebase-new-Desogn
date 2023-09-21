@@ -104,6 +104,10 @@ export class ApiService {
     return this.http.put(this.baseURL + 'account/update.php', body, {headers: this.headers});
   }
 
+  deleteAccount(data: Iaccount): Observable<any> {
+    return this.http.delete(this.baseURL + 'account/destroy.php?account_id='+data.account_id);
+  }
+
   /*
   Posts and Articles goes here with all api calls
    */

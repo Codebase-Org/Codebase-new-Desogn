@@ -71,7 +71,9 @@ export class EditAccountComponent implements OnInit {
       account_id: this.profil.account_id,
       instructor_id: formObj.instructor_id,
       end_date: formObj.end_date,
-      role_id: formObj.role_id
+      role_id: formObj.role_id,
+      created_date: this.account.created_date,
+      email: this.account.email
     }
 
     this.api.updateAccount(account).subscribe(data => {
