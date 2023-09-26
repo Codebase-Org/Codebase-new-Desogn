@@ -18,6 +18,10 @@ import {CreateProfileComponent} from "./home/profile/create-profile/create-profi
 import {EditProfileComponent} from "./home/profile/edit-profile/edit-profile.component";
 import {ProfileComponent} from "./home/profile/profile.component";
 import {AdminSearchComponent} from "./admin/admin-search/admin-search.component";
+import {AdminFaqsComponent} from "./admin/admin-faqs/admin-faqs.component";
+import {CreateFaqsComponent} from "./admin/admin-faqs/create-faqs/create-faqs.component";
+import {EditFaqsComponent} from "./admin/admin-faqs/edit-faqs/edit-faqs.component";
+import {ViewFaqsComponent} from "./admin/admin-faqs/view-faqs/view-faqs.component";
 
 /*
   All routes for codebase, will be going here. But two of the routes are parents
@@ -53,7 +57,11 @@ const routes: Routes = [
       {path: 'edit-account/:account_id', component: EditAccountComponent},
       {path: 'admin-profile/:account_id', component: AdminProfileComponent},
       {path: 'add-profile', component: CreateAdminProfileComponent},
-      {path: 'edit-profile/:account_id', component: EditAdminProfileComponent}
+      {path: 'edit-profile/:account_id', component: EditAdminProfileComponent},
+      {path: 'admin-faqs', component: AdminFaqsComponent},
+      {path: 'admin-create-faqs', component: CreateFaqsComponent},
+      {path: 'admin-edit-faqs/:faq_id', component: EditFaqsComponent},
+      {path: 'admin-view-faqs/:faq_id', component: ViewFaqsComponent}
     ]}
 ];
 

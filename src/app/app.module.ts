@@ -29,6 +29,10 @@ import { CreateProfileComponent } from './home/profile/create-profile/create-pro
 import { SidemenuComponent } from './home/frontpage/sidemenu/sidemenu.component';
 import { EditProfileComponent } from './home/profile/edit-profile/edit-profile.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
+import { AdminFaqsComponent } from './admin/admin-faqs/admin-faqs.component';
+import { CreateFaqsComponent } from './admin/admin-faqs/create-faqs/create-faqs.component';
+import { ViewFaqsComponent } from './admin/admin-faqs/view-faqs/view-faqs.component';
+import { EditFaqsComponent } from './admin/admin-faqs/edit-faqs/edit-faqs.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,11 @@ import { AdminSearchComponent } from './admin/admin-search/admin-search.componen
     CreateProfileComponent,
     SidemenuComponent,
     EditProfileComponent,
-    AdminSearchComponent
+    AdminSearchComponent,
+    AdminFaqsComponent,
+    CreateFaqsComponent,
+    ViewFaqsComponent,
+    EditFaqsComponent
   ],
   imports: [
     BrowserModule,

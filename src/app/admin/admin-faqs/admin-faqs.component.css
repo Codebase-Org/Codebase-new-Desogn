@@ -1,0 +1,137 @@
+.container {
+  top: 62px;
+  left: 280px;
+  position: absolute;
+  padding: 15px;
+  width: calc(100vw - 280px);
+  height: calc(100vh - 62px);
+  background-color: rgba(199,199,199);
+}
+
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.container table thead tr th:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50px;
+  min-width: 50px;
+}
+
+.container table thead tr th:last-child {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.container table thead tr {
+  border-bottom: 1px solid #eff2f4;
+  text-align: left;
+  padding: 5px 0;
+  width: auto;
+}
+
+.container table thead tr th {
+  text-align: left;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.container table thead tr th:nth-child(3) {
+  text-align: left;
+  padding: 5px 0;
+  width: 200px;
+  display: block;
+}
+
+.container table tbody tr:nth-child(odd) {
+  background-color: #abb8c3;
+}
+
+.container table tbody tr:nth-child(even) {
+  background-color: #eff2f4;
+}
+
+.container table tbody tr td {
+  padding: 5px 0;
+  width: fit-content;
+  min-height: 35px;
+  width: 100%;
+}
+
+.container table tbody tr td:first-child {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  max-width: 50px;
+  min-width: 50px;
+}
+
+.container table tbody tr td:last-child {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.container table tbody tr td:nth-child(3) {
+  max-width: 200px;
+  min-width: 200px;
+}
+
+.container table tbody tr td .status {
+  width: fit-content;
+}
+
+.container table tbody tr td .status.available {
+  color: #1d98fe;
+}
+
+.container table tbody tr td .status.unavailable {
+  color: #112047;
+}
+
+.container table tbody tr td .btn-group-inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container table tbody tr td .btn-group-inline .btn {
+  background: transparent;
+  width: 30px;
+  border-right: 0;
+  cursor: pointer;
+  border: 0;
+}
+
+.container table tbody tr td .btn-group-inline .btn:first-child {
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
+}
+
+.container table tbody tr td .btn-group-inline .btn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.container table tbody tr td .btn-group-inline .btn.btn-warning {
+  background: darkorange;
+  color: #112047;
+}
+
+.container table tbody tr td .btn-group-inline .btn.btn-info {
+  background: #1d98fe;
+  color: white;
+}
+
+.container table tbody tr td .btn-group-inline .btn.btn-secondary {
+  background: #abb8c3;
+  color: #112047;
+}
+
+.container table tbody tr td .btn-group-inline .btn.btn-danger {
+  background: red;
+  color: white;
+}

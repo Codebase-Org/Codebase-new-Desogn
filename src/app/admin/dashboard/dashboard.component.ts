@@ -3,6 +3,7 @@ import {ApiService} from "../../services/api.service";
 import {AuthService} from "../../services/auth.service";
 import {Iaccount} from "../../interfaces/iaccount";
 import {Iposts} from "../../interfaces/iposts";
+import {Icounter} from "../../interfaces/icounter";
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +17,7 @@ export class DashboardComponent implements OnInit {
   studentCount: any = {};
   articleCount: any = {};
   forumCount: any = {};
+  onlineCount: Icounter = {};
   constructor(private api: ApiService, private auth: AuthService) {
   }
 
@@ -24,6 +26,7 @@ export class DashboardComponent implements OnInit {
     this.studentCounter();
     this.countForum();
     this.countArticle();
+    this.getOnline();
     //console.log(this.auth.role_id);
   }
 
@@ -72,6 +75,13 @@ export class DashboardComponent implements OnInit {
 
     this.api.counter(post).subscribe(data => {
       this.articleCount = data;
+    })
+  }
+
+  getOnline() {
+    this.api.getOnlineNumber().subscribe(data => {
+      this.onlineCount = data;
+      //console.log(this.onlineCount);
     })
   }
 

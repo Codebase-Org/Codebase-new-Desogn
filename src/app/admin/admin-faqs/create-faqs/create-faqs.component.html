@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <form [formGroup]="faqForm">
+        <div class="card-header">Creation of an FAQ</div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>Faq Title</label>
+            <input type="text" formControlName="faq_title" class="form-control" placeholder="Enter FAQ Title here....">
+          </div>
+          <div class="form-group">
+            <label>Faq Content</label>
+            <textarea formControlName="faq_content" class="form-control" placeholder="Enter the description for the faq here"></textarea>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary" (click)="createFaq(faqForm.value)">Save Faq</button>
+          <button type="reset" class="btn btn-clear">Clear All</button>
+          <button type="button" class="btn btn-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -89,6 +89,14 @@
   color: green;
 }
 
+.dashboard .row .card .card-body span .online {
+  color: #287a00;
+}
+
+.dashboard .row .card .card-body span .offline {
+  color: red;
+}
+
 .dashboard .row .card .card-body table {
   width: 100%;
   border-collapse: collapse;

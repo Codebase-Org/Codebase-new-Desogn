@@ -1,0 +1,26 @@
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Faq Title</th>
+      <th>Datetime</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of faqs">
+      <td>{{item.faq_id}}</td>
+      <td>{{item.faq_title}}</td>
+      <td>{{item.faq_time}}</td>
+      <td>
+        <div class="btn-group-inline">
+          <button class="btn btn-warning" #view data-id="{{item.faq_id}}" (click)="viewFaq(view)"><i class="fa fa-eye"></i></button>
+          <button class="btn btn-info" #edit data-id="{{item.faq_id}}" (click)="editFaq(edit)"><i class="fa fa-pencil"></i></button>
+          <button class="btn btn-danger" #delete data-id="{{item.faq_id}}" (click)="deleteFaq(delete)"><i class="fa fa-trash"></i></button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

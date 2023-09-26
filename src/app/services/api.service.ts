@@ -10,6 +10,9 @@ import {Itypes} from "../interfaces/itypes";
 import {Icategory} from "../interfaces/icategory";
 import {Irole} from "../interfaces/irole";
 import {Ieducation} from "../interfaces/ieducation";
+import {Icounter} from "../interfaces/icounter";
+import {Ifaq} from "../interfaces/ifaq";
+import {Imessage} from "../interfaces/imessage";
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +21,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  //baseURL = "http://192.168.22.31:8080/codebase/api/";
-  baseURL = "http://91.101.23.138/codebase/api/";
+  baseURL = "http://192.168.22.31/codebase/api/";
+  //baseURL = "http://91.101.23.138/codebase/api/";
   //baseURLCapi = "";
 
   headers: HttpHeaders = new HttpHeaders({
@@ -108,6 +111,10 @@ export class ApiService {
     return this.http.delete(this.baseURL + 'account/destroy.php?account_id='+data.account_id);
   }
 
+  getOnlineNumber(): Observable<Icounter> {
+    return this.http.get<Icounter>(this.baseURL + 'account/getOnline.php');
+  }
+
   /*
   Posts and Articles goes here with all api calls
    */
@@ -137,5 +144,30 @@ export class ApiService {
 
   getForumPosts(id: Iposts): Observable<Iposts[]> {
     return this.http.get<Iposts[]>(this.baseURL + 'forum/posts.php?id='+id.category_id);
+  }
+
+  /*
+  All api calls for FAQ section will be going here.
+   */
+  getAllFaqs(): Observable<Ifaq[]> {
+    return this.http.get<Ifaq[]>(this.baseURL + 'faq/faqs.php');
+  }
+
+  deleteFaq(id: Ifaq): Observable<Imessage> {
+    return this.http.delete<Imessage>(this.baseURL + 'faq/destroy.php?id='+id.faq_id);
+  }
+
+  createFaq(faq: Ifaq): Observable<Imessage> {
+    const body = JSON.stringify(faq);
+    return this.http.post<Imessage>(this.baseURL + 'faq/insert.php', body, {headers: this.headers});
+  }
+
+  getSingleFaq(faq: Ifaq): Observable<Ifaq> {
+    return this.http.get<Ifaq>(this.baseURL + 'faq/single.php?id=' + faq.faq_id);
+  }
+
+  updateFaq(faq: Ifaq): Observable<Ifaq> {
+    let body = JSON.stringify(faq);
+    return this.http.put<Ifaq>(this.baseURL + 'faq/update.php', body, {headers: this.headers});
   }
 }
