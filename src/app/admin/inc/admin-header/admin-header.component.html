@@ -54,9 +54,18 @@
   <header class="topbar">
     <ul class="topbar-nav">
       <li class="nav-item"><i class="fa fa-arrows-alt" aria-hidden="true" title="Fullscreen F11"></i></li>
-      <li class="nav-item"><i class="fa fa-search" aria-hidden="true"></i></li>
+      <li class="nav-item" (click)="showSearchbar()"><i class="fa fa-search" aria-hidden="true"></i></li>
       <li class="nav-item"><i class="fa fa-inbox" aria-hidden="true"></i><span class="badge">0</span></li>
     </ul>
+
+    <div class="search-bar" [ngClass]="{'show': isSerchbarActive}">
+      <form [formGroup]="searchForm">
+        <div class="form-group-inline">
+          <input type="text" class="form-control" placeholder="Enter search word..." formControlName="keyword">
+          <button type="submit" class="btn btn-search" (click)="searchHandler(searchForm.value)">Search</button>
+        </div>
+      </form>
+    </div>
   </header>
 </div>
 

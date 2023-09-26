@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
       instructor_id: this.auth.id
     }
 
-    console.log(inst);
+    //console.log(inst);
 
     this.api.getTeam(inst).subscribe(data => {
         if(data[0] !== undefined) {

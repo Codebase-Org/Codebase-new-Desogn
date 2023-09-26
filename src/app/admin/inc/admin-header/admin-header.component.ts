@@ -5,6 +5,8 @@ import {Iaccount} from "../../../interfaces/iaccount";
 import {ApiService} from "../../../services/api.service";
 import {Imassage} from "../../../interfaces/imassage";
 import {logCumulativeDurations} from "@angular-devkit/build-angular/src/tools/esbuild/profiling";
+import {Isearch} from "../../../interfaces/isearch";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-admin-header',
@@ -20,6 +22,7 @@ export class AdminHeaderComponent implements OnInit {
 
   isFullscreen: boolean = false;
   isUserInfoActive: boolean = false;
+  isSerchbarActive: boolean = false;
 
   fullname: string | undefined = "";
   email: string | undefined = "";
@@ -28,6 +31,10 @@ export class AdminHeaderComponent implements OnInit {
   status: Imassage = {};
   profile: Iaccount = {};
   accountId: any = null;
+
+  searchForm = new FormGroup({
+    keyword: new FormControl()
+  });
 
 
 
@@ -123,6 +130,18 @@ this.api.getProfileData(data).subscribe(usr => {
 
   logoutHandler() {
     this.auth.logout();
+  }
+
+  showSearchbar() {
+    this.isSerchbarActive = !this.isSerchbarActive;
+  }
+
+  searchHandler(searchObj: any) {
+    this.isSerchbarActive = !this.isSerchbarActive;
+    let search: Isearch = {
+      keyword: searchObj.keyword
+    };
+    this.router.navigate(['admin/admin-search',search.keyword], {state: {data: search}});
   }
 
 }

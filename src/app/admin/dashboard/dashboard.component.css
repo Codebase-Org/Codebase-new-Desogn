@@ -2,7 +2,7 @@
   top: 62px;
   left: 280px;
   position: absolute;
-  padding: 0;
+  padding: 25px;
   width: calc(100vw - 280px);
   background-color: rgba(199,199,199);
   overflow-y: auto;
@@ -14,27 +14,35 @@
 .dashboard .row {
   display: flex;
   flex-direction: row;
-  gap: 0;
+  gap: 25px;
   flex-wrap: wrap;
   width: 100%;
   margin: 0;
+  margin-bottom: 25px;
 }
 
 .dashboard .row .card {
   background-color: rgba(255,255,255);
-  border-radius: 0;
+  border-radius: 10px;
   flex: 1;
   height: fit-content;
   padding: 0px 0;
   display: flex;
   flex-wrap: wrap;
   border-right: 1px solid #eff2f4;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
 }
 
 .dashboard .row .card .card-header {
   padding: 20px 20px;
   width: 100%;
   background: #eff2f4;
+  border-radius: 10px 10px 0 0;
+}
+
+.dashboard .row .card .card-header i {
+  margin-right: 15px;
+  font-size: 20px;
 }
 
 .dashboard .row .card .card-header .card-text {
@@ -62,7 +70,7 @@
 }
 
 .dashboard .row .card .card-body span {
-  font-size: 30px;
+  font-size: 36px;
 }
 
 .dashboard .row .card .card-body span.text-primary {

@@ -17,6 +17,7 @@ import {EditAccountComponent} from "./admin/accounts/edit-account/edit-account.c
 import {CreateProfileComponent} from "./home/profile/create-profile/create-profile.component";
 import {EditProfileComponent} from "./home/profile/edit-profile/edit-profile.component";
 import {ProfileComponent} from "./home/profile/profile.component";
+import {AdminSearchComponent} from "./admin/admin-search/admin-search.component";
 
 /*
   All routes for codebase, will be going here. But two of the routes are parents
@@ -45,6 +46,7 @@ const routes: Routes = [
     Routes for admin will be going in here.
      */
       {path: 'dashboard', component: DashboardComponent},
+      {path: 'admin-search/:keyword', component: AdminSearchComponent},
       {path: 'accounts', component: AccountsComponent},
       {path: 'accounts/:role', component: AccountsComponent},
       {path: 'new-account', component: CreateAccountComponent},

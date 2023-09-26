@@ -28,6 +28,7 @@ import { ProfileComponent } from './home/profile/profile.component';
 import { CreateProfileComponent } from './home/profile/create-profile/create-profile.component';
 import { SidemenuComponent } from './home/frontpage/sidemenu/sidemenu.component';
 import { EditProfileComponent } from './home/profile/edit-profile/edit-profile.component';
+import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { EditProfileComponent } from './home/profile/edit-profile/edit-profile.c
     ProfileComponent,
     CreateProfileComponent,
     SidemenuComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    AdminSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+.container {
+  top: 62px;
+  left: 280px;
+  position: absolute;
+  padding: 0;
+  width: calc(100vw - 280px);
+  height: calc(100vh - 62px);
+  background-color: rgba(199,199,199);
+}

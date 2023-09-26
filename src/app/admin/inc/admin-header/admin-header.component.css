@@ -239,6 +239,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
 }
 
 .topbar .topbar-nav {
@@ -268,4 +269,50 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.topbar .search-bar {
+  top: -61px;
+  left: 0;
+  position: absolute;
+  background: white;
+  height: 61px;
+  width: 100%;
+  transition: ease-in-out .4s;
+}
+
+.topbar .search-bar.show {
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: white;
+  height: 61px;
+  width: 100%;
+}
+
+.topbar .search-bar .form-group-inline {
+  display: flex;
+  width: 100%;
+  height: 61px;
+}
+
+.topbar .search-bar .form-group-inline .form-control {
+  flex: 1;
+  outline: 0;
+  border: 0;
+  padding: 0 25px;
+}
+
+.topbar .search-bar .form-group-inline .btn {
+  padding: 0 50px;
+  border: 0;
+  border-left: 1px solid #eff2f4;
+  background: transparent;
+  cursor: pointer;
+}
+
+.topbar .search-bar .form-group-inline .btn.btn-search {
+  background: #112047;
+  color: white;
+  font-weight: bold;
 }
