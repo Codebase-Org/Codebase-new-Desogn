@@ -22,6 +22,9 @@ import {AdminFaqsComponent} from "./admin/admin-faqs/admin-faqs.component";
 import {CreateFaqsComponent} from "./admin/admin-faqs/create-faqs/create-faqs.component";
 import {EditFaqsComponent} from "./admin/admin-faqs/edit-faqs/edit-faqs.component";
 import {ViewFaqsComponent} from "./admin/admin-faqs/view-faqs/view-faqs.component";
+import {AdminCategoryComponent} from "./admin/admin-category/admin-category.component";
+import {EditCategoryComponent} from "./admin/admin-category/edit-category/edit-category.component";
+import {CreateCategoryComponent} from "./admin/admin-category/create-category/create-category.component";
 
 /*
   All routes for codebase, will be going here. But two of the routes are parents
@@ -61,7 +64,10 @@ const routes: Routes = [
       {path: 'admin-faqs', component: AdminFaqsComponent},
       {path: 'admin-create-faqs', component: CreateFaqsComponent},
       {path: 'admin-edit-faqs/:faq_id', component: EditFaqsComponent},
-      {path: 'admin-view-faqs/:faq_id', component: ViewFaqsComponent}
+      {path: 'admin-view-faqs/:faq_id', component: ViewFaqsComponent},
+      {path: 'admin-categories', component: AdminCategoryComponent},
+      {path: 'admin-edit-category/:category_id', component: EditCategoryComponent},
+      {path: 'admin-create-category', component: CreateCategoryComponent}
     ]}
 ];
 

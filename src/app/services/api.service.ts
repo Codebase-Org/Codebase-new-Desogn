@@ -126,20 +126,10 @@ export class ApiService {
     return this.http.get<Itypes[]>(this.baseURL + 'forum/post_types.php');
   }
 
-  getCategoryList(): Observable<Icategory[]> {
-    return this.http.get<Icategory[]>(this.baseURL + 'categories/category_list.php');
-  }
 
-  getCategories(post_type_id: any): Observable<Icategory[]> {
-    return this.http.get<Icategory[]>(this.baseURL + 'categories/categories.php?type_id='+post_type_id);
-  }
 
   getSingleType(id: Itypes):Observable<Itypes> {
     return this.http.get<Itypes>(this.baseURL + 'types/single.php?type_id='+id.post_type_id);
-  }
-
-  getSingleCategory(id: Icategory): Observable<Icategory> {
-    return this.http.get<Icategory>(this.baseURL + 'categories/single.php?id=' + id.category_id);
   }
 
   getForumPosts(id: Iposts): Observable<Iposts[]> {
@@ -170,4 +160,27 @@ export class ApiService {
     let body = JSON.stringify(faq);
     return this.http.put<Ifaq>(this.baseURL + 'faq/update.php', body, {headers: this.headers});
   }
+
+  /*
+  Alle endpoints for categories goes here...
+   */
+  createCategory(data: any) {
+    return this.http.post(this.baseURL + 'categories/insert.php', data);
+  }
+
+  updateCategory(data: any) {
+    return this.http.post(this.baseURL + 'categories/update.php', data);
+  }
+  getCategoryList(): Observable<Icategory[]> {
+    return this.http.get<Icategory[]>(this.baseURL + 'categories/category_list.php');
+  }
+
+  getCategories(post_type_id: any): Observable<Icategory[]> {
+    return this.http.get<Icategory[]>(this.baseURL + 'categories/categories.php?type_id='+post_type_id);
+  }
+
+  getSingleCategory(id: Icategory): Observable<Icategory> {
+    return this.http.get<Icategory>(this.baseURL + 'categories/single.php?id=' + id.category_id);
+  }
+
 }

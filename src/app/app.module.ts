@@ -33,6 +33,9 @@ import { AdminFaqsComponent } from './admin/admin-faqs/admin-faqs.component';
 import { CreateFaqsComponent } from './admin/admin-faqs/create-faqs/create-faqs.component';
 import { ViewFaqsComponent } from './admin/admin-faqs/view-faqs/view-faqs.component';
 import { EditFaqsComponent } from './admin/admin-faqs/edit-faqs/edit-faqs.component';
+import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
+import { CreateCategoryComponent } from './admin/admin-category/create-category/create-category.component';
+import { EditCategoryComponent } from './admin/admin-category/edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,10 @@ import { EditFaqsComponent } from './admin/admin-faqs/edit-faqs/edit-faqs.compon
     AdminFaqsComponent,
     CreateFaqsComponent,
     ViewFaqsComponent,
-    EditFaqsComponent
+    EditFaqsComponent,
+    AdminCategoryComponent,
+    CreateCategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,

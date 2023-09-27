@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <form [formGroup]="createForm" method="post" enctype="multipart/form-data">
+          <div class="card-header">Create Category</div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Category Name</label>
+              <input type="text" formControlName="catname" value="" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Category Logo</label>
+              <input type="file" formControlName="picture" (change)="onSelectedFile($event)" class="form-control">
+            </div>
+          </div>
+          <div class="card-footer">
+            <input type="submit" class="btn btn-primary" value="Update Category" (click)="updateCategory(createForm.value)">
+            <button type="button" class="btn btn-cancel">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-header">Preview Selected File</div>
+        <div class="card-body"><img [src]="previewUrl" alt="File Preview" class="preview"></div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
