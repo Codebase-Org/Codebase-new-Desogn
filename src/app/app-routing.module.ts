@@ -25,6 +25,11 @@ import {ViewFaqsComponent} from "./admin/admin-faqs/view-faqs/view-faqs.componen
 import {AdminCategoryComponent} from "./admin/admin-category/admin-category.component";
 import {EditCategoryComponent} from "./admin/admin-category/edit-category/edit-category.component";
 import {CreateCategoryComponent} from "./admin/admin-category/create-category/create-category.component";
+import {ForumCategoryComponent} from "./admin/admin-forum/forum-category/forum-category.component";
+import {AdminForumComponent} from "./admin/admin-forum/admin-forum.component";
+import {AdminCreatePostComponent} from "./admin/admin-forum/admin-create-post/admin-create-post.component";
+import {ViewPostComponent} from "./admin/admin-forum/view-post/view-post.component";
+import {AdminReportsComponent} from "./admin/admin-forum/admin-reports/admin-reports.component";
 
 /*
   All routes for codebase, will be going here. But two of the routes are parents
@@ -67,7 +72,12 @@ const routes: Routes = [
       {path: 'admin-view-faqs/:faq_id', component: ViewFaqsComponent},
       {path: 'admin-categories', component: AdminCategoryComponent},
       {path: 'admin-edit-category/:category_id', component: EditCategoryComponent},
-      {path: 'admin-create-category', component: CreateCategoryComponent}
+      {path: 'admin-create-category', component: CreateCategoryComponent},
+      {path: 'admin-forum-categories/:type_id', component: ForumCategoryComponent},
+      {path: 'admin-forum/:id', component: AdminForumComponent},
+      {path: 'admin-create-post', component: AdminCreatePostComponent},
+      {path: 'admin-view-post', component: ViewPostComponent},
+      {path: 'admin-forum-reports', component: AdminReportsComponent}
     ]}
 ];
 

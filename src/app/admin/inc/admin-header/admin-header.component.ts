@@ -7,6 +7,7 @@ import {Imassage} from "../../../interfaces/imassage";
 import {logCumulativeDurations} from "@angular-devkit/build-angular/src/tools/esbuild/profiling";
 import {Isearch} from "../../../interfaces/isearch";
 import {FormControl, FormGroup} from "@angular/forms";
+import {Itypes} from "../../../interfaces/itypes";
 
 @Component({
   selector: 'app-admin-header',
@@ -31,6 +32,7 @@ export class AdminHeaderComponent implements OnInit {
   status: Imassage = {};
   profile: Iaccount = {};
   accountId: any = null;
+  forumTypes: Itypes[] = [];
 
   searchForm = new FormGroup({
     keyword: new FormControl()
@@ -49,6 +51,7 @@ export class AdminHeaderComponent implements OnInit {
   }
   ngOnInit() {
     this.getUser();
+    this.getTypes();
     this.profile = {
       account_id: this.auth.id
     }
@@ -65,6 +68,12 @@ export class AdminHeaderComponent implements OnInit {
       }
       //console.log(this.isProfileExists);
     });
+  }
+
+  getTypes() {
+    this.api.getPostTypes().subscribe(data => {
+      this.forumTypes = data;
+    })
   }
 
   getUser() {

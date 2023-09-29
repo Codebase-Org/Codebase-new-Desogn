@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
     password: new FormControl(),
   });
 
+  dot:any = [];
+
   ownerStatus: boolean = false;
 
   constructor(private router: Router, private auth: AuthService, private api: ApiService) {
@@ -37,8 +39,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.checkOwner();
-
-
+    while(this.dot.length < 50){
+      this.dot[this.dot.length] = this.dot.length;
+    }
+    // console.log(this.dot.length)
   }
 
   loginHandler(loginObj: Ilogin) {

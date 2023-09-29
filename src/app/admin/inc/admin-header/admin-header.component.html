@@ -49,9 +49,17 @@
         <li class="nav-item"><a routerLink="./admin-categories" class="nav-link"><i class="fa fa-sitemap"></i><span>All Categories</span></a></li>
         <li class="nav-item"><a routerLink="./admin-create-category" class="nav-link"><i class="fa fa-plus"></i><span>Create Category</span></a></li>
         <li class="nav-text">Forums</li>
-        <li class="nav-item"><a routerLink="./dashboard" class="nav-link"><i class="fa fa-sitemap"></i>Categories</a></li>
-        <li class="nav-item"><a routerLink="./dashboard" class="nav-link"><i class="fa fa-plus"></i>New Entry</a></li>
-        <li class="nav-item"><a routerLink="./dashboard" class="nav-link"><i class="fa fa-flag"></i>Post Reports</a></li>
+        <li class="nav-item" *ngFor="let item of forumTypes">
+          <a routerLink="./admin-forum-categories/{{item.post_type_id}}" class="nav-link">
+            <i class="fa" [ngClass]="{
+              'fa-folder-open-o': item.post_type_id == 1,
+              'fa-file-text-o': item.post_type_id == 2,
+              'fa-sticky-note-o': item.post_type_id == 3
+            }"></i><span>{{item.post_type_title}}</span>
+          </a>
+        </li>
+        <li class="nav-item"><a routerLink="./admin-create-post" class="nav-link"><i class="fa fa-plus"></i>New Entry</a></li>
+        <li class="nav-item"><a routerLink="./admin-forum-reports" class="nav-link"><i class="fa fa-flag"></i>Post Reports</a></li>
       </ul>
     </div>
   </aside>

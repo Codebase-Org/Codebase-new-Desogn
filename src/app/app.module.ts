@@ -36,6 +36,11 @@ import { EditFaqsComponent } from './admin/admin-faqs/edit-faqs/edit-faqs.compon
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
 import { CreateCategoryComponent } from './admin/admin-category/create-category/create-category.component';
 import { EditCategoryComponent } from './admin/admin-category/edit-category/edit-category.component';
+import { AdminForumComponent } from './admin/admin-forum/admin-forum.component';
+import { ForumCategoryComponent } from './admin/admin-forum/forum-category/forum-category.component';
+import { ViewPostComponent } from './admin/admin-forum/view-post/view-post.component';
+import { AdminReportsComponent } from './admin/admin-forum/admin-reports/admin-reports.component';
+import { AdminCreatePostComponent } from './admin/admin-forum/admin-create-post/admin-create-post.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +74,12 @@ import { EditCategoryComponent } from './admin/admin-category/edit-category/edit
     EditFaqsComponent,
     AdminCategoryComponent,
     CreateCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    AdminForumComponent,
+    ForumCategoryComponent,
+    ViewPostComponent,
+    AdminReportsComponent,
+    AdminCreatePostComponent
   ],
   imports: [
     BrowserModule,

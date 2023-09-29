@@ -7,6 +7,25 @@
   overflow: hidden;
 }
 
+.container .dot-wrapper {
+  top: 30px;
+  right: 30px;
+  width: 200px;
+  height: fit-content;
+  position: absolute;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.container .dot-wrapper .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+}
+
 .container .row {
   display: flex;
   flex: 1 1 auto;
